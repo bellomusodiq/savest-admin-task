@@ -55,7 +55,7 @@
                 {% for user in all_users.data %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td><a href="/custom_admin/{{ user.id }}">{{ user.username }}</a></td>
+                        <td><a href="/admin/{{ user.id }}">{{ user.username }}</a></td>
                         <td>{{ user.date_joined }}</td>
                         <td>
                             {% if user.is_superuser %}
@@ -106,16 +106,16 @@
                 </div>
                 <ul class="pagination">
                     <li class="page-item disabled mr-2 {% if not all_users.has_previous %}disabled{% endif %}">
-                        <a href="{% if all_users.has_next %} /custom_admin/?user_page={{ current_page|add:"-1" }}
+                        <a href="{% if all_users.has_next %} /admin/?user_page={{ current_page|add:"-1" }}
                             {% endif %}" class="page-link">Previous</a></li>
                     {% for page_number in all_users.page_range %}
                         <li class="page-item mr-1 {% if all_users.current_page == page_number %}active{% endif %}">
-                            <a href="/custom_admin/?user_page={{ page_number }}" class="page-link">{{ page_number }}
+                            <a href="/admin/?user_page={{ page_number }}" class="page-link">{{ page_number }}
                             </a>
                         </li>
                     {% endfor %}
                     <li class="page-item ml-1 {% if not all_users.has_next %}disabled{% endif %}"><a
-                            href="{% if all_users.has_next %} /custom_admin/?user_page={{ current_page|add:"1" }}
+                            href="{% if all_users.has_next %} /admin/?user_page={{ current_page|add:"1" }}
                             {% endif %}"
                             class="page-link">Next</a></li>
                 </ul>
@@ -147,7 +147,7 @@
                 {% for user in all_active_users.data %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td><a href="/custom_admin/{{ user.id }}">{{ user.username }}</a></td>
+                        <td><a href="/admin/{{ user.id }}">{{ user.username }}</a></td>
                         <td>{{ user.date_joined }}</td>
                         <td>
                             {% if user.is_superuser %}
@@ -197,18 +197,18 @@
                 </div>
                 <ul class="pagination">
                     <li class="page-item disabled mr-2 {% if not all_active_users.has_previous %}disabled{% endif %}">
-                        <a href="{% if all_active_users.has_next %} /custom_admin/?user_page={{ current_page|add:"-1" }}
+                        <a href="{% if all_active_users.has_next %} /admin/?user_page={{ current_page|add:"-1" }}
                             {% endif %}" class="page-link">Previous</a></li>
                     {% for page_number in all_active_users.page_range %}
                         <li class="page-item mr-1 {% if all_active_users.current_page == page_number %}
                         active{% endif %}">
-                            <a href="/custom_admin/?active_users_page={{ page_number }}"
+                            <a href="/admin/?active_users_page={{ page_number }}"
                                class="page-link">{{ page_number }}
                             </a>
                         </li>
                     {% endfor %}
                     <li class="page-item ml-1 {% if not all_active_users.has_next %}disabled{% endif %}"><a
-                            href="{% if all_active_users.has_next %} /custom_admin/?user_page={{ current_page|add:"1" }}
+                            href="{% if all_active_users.has_next %} /admin/?user_page={{ current_page|add:"1" }}
                             {% endif %}"
                             class="page-link">Next</a></li>
                 </ul>
@@ -240,7 +240,7 @@
                 {% for user in all_inactive_users.data %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td><a href="/custom_admin/{{ user.id }}">{{ user.username }}</a></td>
+                        <td><a href="/admin/{{ user.id }}">{{ user.username }}</a></td>
                         <td>{{ user.date_joined }}</td>
                         <td>
                             {% if user.is_superuser %}
@@ -290,18 +290,18 @@
                 </div>
                 <ul class="pagination">
                     <li class="page-item disabled mr-2 {% if not all_inactive_users.has_previous %}disabled{% endif %}">
-                        <a href="{% if all_inactive_users.has_next %} /custom_admin/?user_page={{ current_page|add:"-1" }}
+                        <a href="{% if all_inactive_users.has_next %} /admin/?user_page={{ current_page|add:"-1" }}
                             {% endif %}" class="page-link">Previous</a></li>
                     {% for page_number in all_inactive_users.page_range %}
                         <li class="page-item mr-1
                         {% if all_inactive_users.current_page == page_number %}active{% endif %}">
-                            <a href="/custom_admin/?inactive_users_page={{ page_number }}" class="page-link">
+                            <a href="/admin/?inactive_users_page={{ page_number }}" class="page-link">
                                 {{ page_number }}
                             </a>
                         </li>
                     {% endfor %}
                     <li class="page-item ml-1 {% if not all_inactive_users.has_next %}disabled{% endif %}"><a
-                            href="{% if all_inactive_users.has_next %} /custom_admin/?user_page={{ current_page|add:"1" }}
+                            href="{% if all_inactive_users.has_next %} /admin/?user_page={{ current_page|add:"1" }}
                             {% endif %}"
                             class="page-link">Next</a></li>
                 </ul>
@@ -333,7 +333,7 @@
                 {% for user in all_staffs.data %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td><a href="/custom_admin/{{ user.id }}">{{ user.username }}</a></td>
+                        <td><a href="/admin/{{ user.id }}">{{ user.username }}</a></td>
                         <td>{{ user.date_joined }}</td>
                         <td>
                             {% if user.is_superuser %}
@@ -383,16 +383,16 @@
                 </div>
                 <ul class="pagination">
                     <li class="page-item disabled mr-2 {% if not all_staffs.has_previous %}disabled{% endif %}">
-                        <a href="{% if all_staffs.has_next %} /custom_admin/?user_page={{ current_page|add:"-1" }}
+                        <a href="{% if all_staffs.has_next %} /admin/?user_page={{ current_page|add:"-1" }}
                             {% endif %}" class="page-link">Previous</a></li>
                     {% for page_number in all_staffs.page_range %}
                         <li class="page-item mr-1 {% if all_staffs.current_page == page_number %}active{% endif %}">
-                            <a href="/custom_admin/?staffs_page={{ page_number }}" class="page-link">{{ page_number }}
+                            <a href="/admin/?staffs_page={{ page_number }}" class="page-link">{{ page_number }}
                             </a>
                         </li>
                     {% endfor %}
                     <li class="page-item ml-1 {% if not all_staffs.has_next %}disabled{% endif %}"><a
-                            href="{% if all_staffs.has_next %} /custom_admin/?user_page={{ current_page|add:"1" }}
+                            href="{% if all_staffs.has_next %} /admin/?user_page={{ current_page|add:"1" }}
                             {% endif %}"
                             class="page-link">Next</a></li>
                 </ul>
