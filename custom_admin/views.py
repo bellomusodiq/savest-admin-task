@@ -110,7 +110,7 @@ class SendEmail(View):
         form = SendEmailForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/custom_admin/')
+            return redirect('/admin/')
         return render(request, 'compose_email.html', {'user': user, 'errors': form.errors})
 
 
@@ -124,7 +124,7 @@ class ActivateOrDisableAccount(View):
         else:
             user.is_active = False
         user.save()
-        return redirect('/custom_admin/')
+        return redirect('/admin/')
 
 
 class LogoutView(View):
